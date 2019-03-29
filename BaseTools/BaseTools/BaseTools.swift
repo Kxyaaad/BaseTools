@@ -19,23 +19,6 @@ let navHeight = UIApplication.shared.statusBarFrame.height
 
 public class baseTools:UIViewController, UIScrollViewDelegate {
     
-    public class func navHeightAddStatusHeight() -> CGFloat  {
-        return UIApplication.shared.statusBarFrame.size.height+UIApplication.shared.statusBarFrame.origin.y
-        
-    }
-    /* 清空登录信息 */
-    public class func  ClearUserDefaults() {
-        Defaults.set(nil, forKey: "user_danwei_name")
-        Defaults.set(nil, forKey: "user_danwei_id")
-        Defaults.set(nil, forKey: "user_icon")
-        Defaults.set(nil, forKey: "user_name")
-        Defaults.set(nil, forKey: "user_id")
-        Defaults.set(nil, forKey: "user_token")
-        Defaults.set(nil, forKey: "user_group")
-        Defaults.set(nil, forKey: "user_ganbu_id")
-        Defaults.set(nil, forKey: "user_zhiwu")
-    }
-    
     /* 自定义方法 */
     
     public class func getLabelHegit(str: String, font: UIFont, width: CGFloat)-> CGFloat {
