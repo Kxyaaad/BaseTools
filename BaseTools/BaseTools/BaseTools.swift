@@ -31,20 +31,23 @@ public class baseTools:UIViewController, UIScrollViewDelegate {
     
     
     //MARK:时间戳转换时间
-    public class func timeStampToString(timeStamp:String, type:String)->String {
+    public enum types {
+        case zhongwen, xiaoshudian, henxian
+    }
+    public class func timeStampToString(timeStamp:String, type:types)->String {
         
         let string = NSString(string: timeStamp)
         
         let timeSta:TimeInterval = string.doubleValue
         let dfmatter = DateFormatter()
-        if type == "年月日" {
+        switch type {
+        case .zhongwen:
             dfmatter.dateFormat="yyyy年MM月dd日 HH:mm:ss"
-        }else if type == "." {
+        case .xiaoshudian:
             dfmatter.dateFormat="yyyy.MM.dd"
-        }else if type == "-" {
+        case .henxian:
             dfmatter.dateFormat="yyyy-MM-dd"
         }
-        
         
         let date = NSDate(timeIntervalSince1970: timeSta)
         
